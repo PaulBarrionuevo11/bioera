@@ -12,7 +12,7 @@
 /* Your existing styles (unchanged) */
 header {
 	position: relative;
-	background-image: url("assets/css/images/overlay.png"), url("assets/css/images/header.svg"), linear-gradient(75deg, #39b230 15%, #53da7e 55%);
+	background-image: url("assets/css/images/overlay.png"), url("assets/css/images/header.svg"), linear-gradient(75deg, #40925a 15%, #2bab53 55%);
 	background-color: #92e168b1;
 	background-size: 128px 128px, 100% 100%, auto;
 	background-repeat: repeat, no-repeat, no-repeat;
@@ -47,10 +47,10 @@ header {
 body {
 	font-family: 'Lexend', Arial, sans-serif;
 	font-weight: 200;
-	font-size: 22px;
+	font-size: 25px;
 	margin: 0;
 	padding: 0;
-	color: #8a7b62;
+	color: #544c3f;
 	background-image: linear-gradient(100deg, #eedbb3 10%, #f4eabc 40%, #eedbb3 50%);
 	background-color: #eae494;
 	background-repeat: repeat, no-repeat, no-repeat;
@@ -118,10 +118,21 @@ body {
 }
 .section {
 	text-align: center;
-	padding: 30px;
+	background-color: rgb(242, 242, 232);
+	padding-bottom: 4rem; 
+	padding-top: 5rem
 }
 .section img {
 	height: 18rem;
+}
+.section p{
+	margin: 2rem 6rem 2.5rem 6rem;
+}
+#purpose-title {
+	font-family: Paytone One; 
+	margin: 2rem auto 1rem auto; 
+	font-size: 45px;
+	color: #554c3d;
 }
 .bioera-keywords-title
 {
@@ -143,6 +154,8 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 20px;
+	background-color: #DFD7BF;
+	color: #544c3f;
 }
 #section-two img {
 	flex: 0 0 auto;
@@ -151,14 +164,24 @@ body {
 #section-two p {
 	width: 100%;
 }
+#section-continent {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	background-color: #CEE6F3;
+	color: #544c3f;
+}
 #promo-wrapper {
 	position: relative;
 	background-image: url("assets/css/images/overlay.png"), url("assets/css/images/promo.jpg");
 	background-size: 192px 192px, cover;
 	background-position: top left, center center;
-	color: #000000b3;
+	color: #fff;
 	text-align: center;
-	padding: 6em 0 6em 0;
+	background-color: #5F939A;
+	padding: 5.5rem 0 5.5em 0;
 }
 #promo-wrapper-top {
 	position: relative;
@@ -171,10 +194,11 @@ body {
 }
 #learn-more .button {
 	margin: 0;
-	background: #00000084;
+	background: #17b04a;
 	color: #fff;
-	font-size: 0.8em;
-	padding: 10px 20px;
+	font-size: 0.9em;
+	font-weight: 600;
+	padding: 15px 50px;
 	border-radius: 50px;
 	border: 1px solid #00000006;
 	text-decoration: none;
@@ -199,8 +223,7 @@ body {
 	transform: scale(1.05);
 }
 #footer-wrapper {
-	background-image: url("assets/css/images/imager-wrapper.svg"), linear-gradient(75deg, rgb(50, 205, 99) 20%, #359f54 55%);
-	background-color: #227222;
+	background-color: #2C3639;
 	background-size: 128px 128px, auto;
 	background-repeat: repeat, no-repeat;
 	padding: 2em 0 2em 0;
