@@ -9,6 +9,32 @@
 	background: transparent; /* Ensure container background is transparent */
 	text-align: center;
 }
+.dialog {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background: white;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	z-index: 1000;
+	display: none;
+	min-width: 200px;
+	text-align: center;
+}
+.dialog button {
+	margin-top: 10px;
+	padding: 5px 10px;
+	cursor: pointer;
+	background: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+}
+.dialog button:hover {
+	background: #0056b3;
+}
 
 /* Your existing styles (unchanged) */
 header {
@@ -72,7 +98,7 @@ body {
 	padding-right: 2rem;
 }
 .nav-menu a:hover {
-	color: #d3db7f;
+	transform: scale(1.1);
 }
 .shopping-cart {
 	flex: 0 0 auto;
@@ -132,7 +158,7 @@ body {
 }
 #purpose-title {
 	font-family: Paytone One; 
-	margin: 2rem auto 1rem auto; 
+	margin: 5rem auto auto auto;
 	font-size: 45px;
 	color: #554c3d;
 }
@@ -165,6 +191,7 @@ body {
 	height: 12.5rem;
 	padding: 0%;
 	margin: 2rem 0 2rem 0;
+	
 }
 #section-two p {
 	width: 100%;
@@ -205,11 +232,9 @@ body {
 	font-weight: 600;
 	padding: 12px 40px;
 	border-radius: 50px;
-	border: 1px solid #00000006;
 	text-decoration: none;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #submit .button {
@@ -220,7 +245,6 @@ body {
 	font-weight: 600;
 	padding: 15px 50px;
 	border-radius: 50px;
-	border: 1px solid #00000006;
 	text-decoration: none;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
@@ -234,32 +258,33 @@ body {
 	font-weight: 600;
 	padding: 15px 50px;
 	border-radius: 50px;
-	border: 1px solid #00000006;
 	text-decoration: none;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 #promo .button {
-	background: #ffde64;
+	background: #f7cd32;
 	color: #606060;
 	font-size: 0.8em;
 	padding: 15px 30px;
 	border-radius: 50px;
 	text-decoration: none;
+	border-width: 0;
+	font-family: 'Lexend', Arial, sans-serif;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 #promo .button:hover {
-	background: #288a20;
+	background: #f7cd32;
 	transform: scale(1.05);
 }
 #footer-wrapper {
 	background-color: #2C3639;
 	background-size: 128px 128px, auto;
 	background-repeat: repeat, no-repeat;
-	padding: 2em 0 2em 0;
+	padding: 2em 0 0em 0;
 	color: #ffffff;
 	text-align: center;
 }
@@ -267,6 +292,7 @@ body {
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 20px;
+	text-align: center;
 }
 #footer h2 {
 	font-family: 'Paytone One', sans-serif;
@@ -280,7 +306,8 @@ body {
 .footer-row {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
+	text-align: center;
 	gap: 20px;
 }
 .footer-col {
@@ -353,10 +380,9 @@ body {
 	justify-content: center;
 }
 .social-media {
-	padding-left: 7rem;
 	display: flex;
-	flex-direction: column;
-	align-items: left;
+	flex-direction: row;
+	align-items: center;
 	gap: 20px;
 }
 .social-media a {
@@ -368,26 +394,27 @@ body {
 	transition: color 0.3s ease;
 }
 .social-media a:hover {
-	color: #3b8c95;
+	color: #ffffff;
 }
 .social-media .icon {
 	margin-right: 10px;
 	font-size: 1.5rem;
 }
 #copyright {
-	padding: 1em 0;
+	padding: 2rem 0;
 	font-size: 0.9rem;
-	margin: 2em;
 }
 #copyright p {
 	color: #ffffff;
 }
 @media (max-width: 768px) {
 	.header-content {
-		flex-direction: column;
+		flex-direction: row;
 		align-items: flex-start;
 	}
 	.header-left-section {
+		flex-direction: column;
+		align-items: flex-start;
 		width: 100%;
 	}
 	.nav-menu {
@@ -401,6 +428,7 @@ body {
 	}
 	.footer-row {
 		flex-direction: column;
+		text-align: center;
 	}
 	.footer-col {
 		min-width: 100%;
