@@ -4,16 +4,17 @@
 /* Style for the globe container */
 #globe-container {
 	width: 100%;
-	height: 400px;
-	margin: 0 auto;
+	height: 385px;
+	margin-left: 9rem;
 	background: transparent; /* Ensure container background is transparent */
+	text-align: center;
 }
 
 /* Your existing styles (unchanged) */
 header {
 	position: relative;
-	background-image: url("assets/css/images/overlay.png"), url("assets/css/images/header.svg"), linear-gradient(75deg, #40925a 15%, #2bab53 55%);
-	background-color: #92e168b1;
+	background-image: url("assets/css/images/overlay.png"), linear-gradient(75deg, #40925a 15%, #2bab53 55%);
+	background-color: #3c8b12;
 	background-size: 128px 128px, 100% 100%, auto;
 	background-repeat: repeat, no-repeat, no-repeat;
 	padding: 10px 20px;
@@ -46,8 +47,8 @@ header {
 }
 body {
 	font-family: 'Lexend', Arial, sans-serif;
-	font-weight: 200;
-	font-size: 25px;
+	font-weight: 400;
+	font-size: 22px;
 	margin: 0;
 	padding: 0;
 	color: #544c3f;
@@ -123,7 +124,8 @@ body {
 	padding-top: 5rem
 }
 .section img {
-	height: 18rem;
+	height: 21rem;
+	margin: 1.1rem auto auto auto;
 }
 .section p{
 	margin: 2rem 6rem 2.5rem 6rem;
@@ -146,6 +148,7 @@ body {
 	margin: 12px; 
 	margin-bottom: 4rem;
 	font-size: 27px;
+	font-weight: 200;
 
 }
 #section-two {
@@ -153,13 +156,15 @@ body {
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
-	gap: 20px;
+	gap: 15px;
 	background-color: #DFD7BF;
 	color: #544c3f;
 }
 #section-two img {
 	flex: 0 0 auto;
 	height: 12.5rem;
+	padding: 0%;
+	margin: 2rem 0 2rem 0;
 }
 #section-two p {
 	width: 100%;
@@ -175,8 +180,8 @@ body {
 }
 #promo-wrapper {
 	position: relative;
-	background-image: url("assets/css/images/overlay.png"), url("assets/css/images/promo.jpg");
-	background-size: 192px 192px, cover;
+	background-image: linear-gradient(5deg, #207c51 10%, #3cb784f9 40%, #43a175 50%);
+	background-size:cover;
 	background-position: top left, center center;
 	color: #fff;
 	text-align: center;
@@ -196,7 +201,36 @@ body {
 	margin: 0;
 	background: #17b04a;
 	color: #fff;
-	font-size: 0.9em;
+	font-size: 0.75em;
+	font-weight: 600;
+	padding: 12px 40px;
+	border-radius: 50px;
+	border: 1px solid #00000006;
+	text-decoration: none;
+	display: inline-block;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#submit .button {
+	margin: 2rem;
+	background: #3571ea;
+	color: #fff;
+	font-size: 0.6em;
+	font-weight: 600;
+	padding: 15px 50px;
+	border-radius: 50px;
+	border: 1px solid #00000006;
+	text-decoration: none;
+	display: inline-block;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+#clear .button {
+	margin: 2rem;
+	background: #626b7b;
+	color: #fff;
+	font-size: 0.6em;
 	font-weight: 600;
 	padding: 15px 50px;
 	border-radius: 50px;
@@ -207,12 +241,11 @@ body {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 #promo .button {
-	background: #39b230;
-	color: #fff;
+	background: #ffde64;
+	color: #606060;
 	font-size: 0.8em;
 	padding: 15px 30px;
 	border-radius: 50px;
-	border: 1px solid #ffffff69;
 	text-decoration: none;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
@@ -261,8 +294,8 @@ body {
 	margin-bottom: 15px;
 	border: 1px solid rgba(58, 51, 51, 0.5);
 	border-radius: 5px;
-	background: rgba(255, 255, 255, 0.1);
-	color: rgb(62, 55, 55);
+	background: rgba(255, 255, 255, 0.701);
+	color: rgb(45, 42, 42);
 }
 .bio-online-form textarea {
 	min-height: 100px;
@@ -302,8 +335,7 @@ body {
 }
 .contact-form input[type="submit"],
 .contact-form input[type="reset"] {
-	background: #e3e9ea;
-	color: #2a2626;
+	color: #ffffff;
 	padding: 10px 20px;
 	border: none;
 	border-radius: 50px;
@@ -343,13 +375,11 @@ body {
 	font-size: 1.5rem;
 }
 #copyright {
-	background: rgba(0, 0, 0, 0.1);
 	padding: 1em 0;
 	font-size: 0.9rem;
 	margin: 2em;
 }
 #copyright p {
-	margin: 0;
 	color: #ffffff;
 }
 @media (max-width: 768px) {

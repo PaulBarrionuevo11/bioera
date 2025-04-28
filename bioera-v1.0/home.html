@@ -43,9 +43,9 @@
     </div>
     <div class="section">
         <p id="purpose-title">Our Purpose</p>
+        <img src="images/kickstart_promo.png" alt="Promo Picture KST">
         <p style="margin: 1rem auto 2rem auto;">BioEra rewards the curiosity of young minds through an engaging card game </br> that makes learning about nature fun</p>
-        <img src="images/promo.jpeg" alt="Promo Picture KST">
-        <div id="learn-more" style="margin: 3rem auto 3rem auto;">
+        <div id="learn-more">
             <a href="learn-more.html" class="button">Learn our story</a>
         </div>
         <!-- <p>We designed all card interactions in BioEra to closely reflect our epic natural world. </br>Players will learn about how Lifeforms of different trophic levels (food web levels) interact and support each other in creating an environment</p> -->
@@ -55,11 +55,11 @@
         <img src="images/simba.png" alt="Section 2 Image 1">
         <img src="images/cheetah_carnivore.png" alt="Section 2 Image 2">
         <img src="images/elephant_herb.png" alt="Section 2 Image 1">
-        <img src="images/yacal_omnivore.png" alt="Section 2 Image 2">
+        <img src="images/yacal_omni.png" alt="Section 2 Image 2">
         <img src="images/elephant_grass_prod.png" alt="Section 2 Image 1">
         <img src="images/beetle_decomp.png" alt="Section 2 Image 2">
         <p style="margin: 1rem auto 2rem auto;">Understand how to use your cards and the different trophic levels</br> This will help you build a strategy to win the game </br></p>
-        <div id="learn-more" style="margin-bottom: 3.5rem;">
+        <div id="learn-more">
             <a href="learn-more.html" class="button">Learn More</a>
         </div>
     </div>
@@ -75,7 +75,9 @@
             <form id="bio-online-form" class="bio-online-form" method="post" action="#" style="margin-left: 18rem; margin-right: 18rem; margin-top: 3rem;">
                 <input id="email" name="email" placeholder="Your Email" type="text" />
                 <div id="success-message" style="height: 0; min-height: 0; overflow: hidden; font-family: 'Lexend', sans-serif; font-size: 1rem; text-align: center; transition: height 0.3s ease, min-height 0.3s ease;"></div>
-                <button type="submit" class="button" style="margin-top: 2rem;">Subscribe to get notified</button>
+                <div id="subscribe-btn" style="margin: 3rem auto 3rem auto;">
+                    <a type="submit" href="learn-more.html" class="button">Subscribe to get notified</a>
+                </div>
             </form>
         </section>
     </div>
@@ -90,8 +92,12 @@
                         <input name="email" placeholder="Your Email" type="text" />
                         <textarea name="message" placeholder="Your Message"></textarea>
                         <div class="form-actions">
-                            <input type="submit" value="Send Message" />
-                            <input type="reset" value="Clear Form" />
+                            <div id="submit">
+                                <a type="submit" href="learn-more.html" class="button">Send Message</a>
+                            </div>
+                            <div id="clear">
+                                <a type="submit" href="learn-more.html" class="button">Clear Form</a>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -110,153 +116,172 @@
         </div>
     </div>
 
-    <script>
-        // Existing cart toggle function
-        function toggleCart(event) {
-            event.preventDefault();
-            const cart = document.getElementById('cart');
-            cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
-        }
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r172/three.min.js"></script>
+<script>
+    // Existing cart toggle function
+    function toggleCart(event) {
+        event.preventDefault();
+        const cart = document.getElementById('cart');
+        cart.style.display = cart.style.display === 'block' ? 'none' : 'block';
+    }
 
-        // Existing form submission script
-        const form = document.getElementById('bio-online-form');
-        const successMessage = document.getElementById('success-message');
+    // Existing form submission script
+    const form = document.getElementById('bio-online-form');
+    const successMessage = document.getElementById('success-message');
+    
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        successMessage.style.height = '0';
+        successMessage.style.minHeight = '0';
+        successMessage.style.overflow = 'hidden';
         
-        form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const email = document.getElementById('email').value.trim();
-            successMessage.style.height = '0';
-            successMessage.style.minHeight = '0';
-            successMessage.style.overflow = 'hidden';
-            
-            if (email === '') {
-                successMessage.textContent = 'Please enter an email address.';
-                successMessage.style.color = '#ff0000';
-                successMessage.style.height = '1rem';
-                successMessage.style.minHeight = '1rem';
-                setTimeout(() => {
-                    successMessage.style.overflow = 'hidden';
-                }, 3000);
-                return;
-            }
-            
-            if (!email.includes('@')) {
-                successMessage.textContent = 'Please enter a valid email address (must include @).';
-                successMessage.style.color = '#ff0000';
-                successMessage.style.height = '1rem';
-                successMessage.style.minHeight = '1rem';
-                setTimeout(() => {
-                    successMessage.style.overflow = 'hidden';
-                }, 3000);
-                return;
-            }
-            
-            console.log('Form Submitted!');
-            console.log('Email:', email);
-            successMessage.textContent = 'Thanks! Your email was sent.';
-            successMessage.style.color = '#39b230';
-            successMessage.style.height = '1.5rem';
-            successMessage.style.minHeight = '1.5rem';
-            form.reset();
+        if (email === '') {
+            successMessage.textContent = 'Please enter an email address.';
+            successMessage.style.color = '#ff0000';
+            successMessage.style.height = '1rem';
+            successMessage.style.minHeight = '1rem';
             setTimeout(() => {
                 successMessage.style.overflow = 'hidden';
             }, 3000);
+            return;
+        }
+        
+        if (!email.includes('@')) {
+            successMessage.textContent = 'Please enter a valid email address (must include @).';
+            successMessage.style.color = '#ff0000';
+            successMessage.style.height = '1rem';
+            successMessage.style.minHeight = '1rem';
+            setTimeout(() => {
+                successMessage.style.overflow = 'hidden';
+            }, 3000);
+            return;
+        }
+        
+        console.log('Form Submitted!');
+        console.log('Email:', email);
+        successMessage.textContent = 'Thanks! Your email was sent.';
+        successMessage.style.color = '#39b230';
+        successMessage.style.height = '1.5rem';
+        successMessage.style.minHeight = '1.5rem';
+        form.reset();
+        setTimeout(() => {
+            successMessage.style.overflow = 'hidden';
+        }, 3000);
+    });
+
+    // Three.js code for enhanced 3D globe with transparent background
+    (function () {
+        // Set up scene, camera, and renderer
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(62, window.innerWidth / 400, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth * 0.78, 400);
+        renderer.setClearColor(0x000000, 0); // Transparent background
+        document.getElementById('globe-container').appendChild(renderer.domElement);
+
+        // Create Earth sphere with higher resolution for better detail
+        const geometry = new THREE.SphereGeometry(5, 64, 64); // Increased segments
+
+        // Load textures from Three.js example
+        const textureLoader = new THREE.TextureLoader();
+        const textures = {
+            map: textureLoader.load('./assets/images/globe.jpg'),
+            specularMap: textureLoader.load('./assets/images/globe.jpg'),
+            normalMap: textureLoader.load('./assets/images/globe.jpg')
+        };
+
+        // Create MeshStandardMaterial for realistic rendering
+        const material = new THREE.MeshStandardMaterial({
+            map: textures.map,
+            specularMap: textures.specularMap, // Water highlights
+            normalMap: textures.normalMap, // Surface detail
+            roughness: 0.7, // Adjust for less shiny appearance
+            metalness: 0.1 // Slight metallic effect for realism
         });
 
-        // Three.js code for 3D globe with transparent background
-        (function () {
-            // Set up scene, camera, and renderer
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(65, window.innerWidth / 400, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true }); // Enable alpha for transparency
-            renderer.setSize(window.innerWidth * 0.8, 400);
-            renderer.setClearColor(0x000000, 0); // Set clear color to transparent
-            document.getElementById('globe-container').appendChild(renderer.domElement);
+        const earth = new THREE.Mesh(geometry, material);
+        scene.add(earth);
 
-            // Create Earth sphere
-            const geometry = new THREE.SphereGeometry(5, 32, 32);
-            const textureLoader = new THREE.TextureLoader();
-            const texture = textureLoader.load('https://threejs.org/examples/textures/planets/earth_atmos_2048.jpg');
-            const material = new THREE.MeshBasicMaterial({ map: texture });
-            const earth = new THREE.Mesh(geometry, material);
-            scene.add(earth);
+        // Position camera
+        camera.position.z = 10;
 
-            // Position camera
-            camera.position.z = 10;
+        // Add improved lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.3); // Softer ambient light
+        scene.add(ambientLight);
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8); // Simulate sunlight
+        directionalLight.position.set(10, 5, 10);
+        scene.add(directionalLight);
+        const pointLight = new THREE.PointLight(0xffffff, 0.5, 100); // Additional light for highlights
+        pointLight.position.set(-10, -5, -10);
+        scene.add(pointLight);
 
-            // Add lighting
-            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
-            scene.add(ambientLight);
-            const pointLight = new THREE.PointLight(0xffffff, 0.5);
-            pointLight.position.set(10, 10, 10);
-            scene.add(pointLight);
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            earth.rotation.y += 0.005; // Auto-rotate
+            renderer.render(scene, camera);
+        }
+        animate();
 
-            // Animation loop
-            function animate() {
-                requestAnimationFrame(animate);
-                earth.rotation.y += 0.005; // Auto-rotate
-                renderer.render(scene, camera);
-            }
-            animate();
+        // Handle window resizing
+        window.addEventListener('resize', () => {
+            const width = window.innerWidth * 0.8;
+            const height = 400;
+            renderer.setSize(width, height);
+            camera.aspect = width / height;
+            camera.updateProjectionMatrix();
+        });
 
-            // Handle window resizing
-            window.addEventListener('resize', () => {
-                const width = window.innerWidth * 0.8;
-                const height = 400;
-                renderer.setSize(width, height);
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-            });
+        // Add drag controls for interactivity
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
 
-            // Add drag controls for interactivity
-            let isDragging = false;
-            let previousMousePosition = { x: 0, y: 0 };
+        document.getElementById('globe-container').addEventListener('mousedown', (e) => {
+            isDragging = true;
+            previousMousePosition = { x: e.clientX, y: e.clientY };
+        });
 
-            document.getElementById('globe-container').addEventListener('mousedown', (e) => {
-                isDragging = true;
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                const deltaMove = {
+                    x: e.clientX - previousMousePosition.x,
+                    y: e.clientY - previousMousePosition.y
+                };
+                earth.rotation.y += deltaMove.x * 0.005;
+                earth.rotation.x += deltaMove.y * 0.005;
                 previousMousePosition = { x: e.clientX, y: e.clientY };
-            });
+            }
+        });
 
-            document.addEventListener('mousemove', (e) => {
-                if (isDragging) {
-                    const deltaMove = {
-                        x: e.clientX - previousMousePosition.x,
-                        y: e.clientY - previousMousePosition.y
-                    };
-                    earth.rotation.y += deltaMove.x * 0.005;
-                    earth.rotation.x += deltaMove.y * 0.005;
-                    previousMousePosition = { x: e.clientX, y: e.clientY };
-                }
-            });
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
 
-            document.addEventListener('mouseup', () => {
-                isDragging = false;
-            });
+        // Add touch support for mobile devices
+        document.getElementById('globe-container').addEventListener('touchstart', (e) => {
+            if (e.touches.length === 1) {
+                isDragging = true;
+                previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }
+        });
 
-            // Add touch support for mobile devices
-            document.getElementById('globe-container').addEventListener('touchstart', (e) => {
-                if (e.touches.length === 1) {
-                    isDragging = true;
-                    previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-                }
-            });
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging && e.touches.length === 1) {
+                const deltaMove = {
+                    x: e.touches[0].clientX - previousMousePosition.x,
+                    y: e.touches[0].clientY - previousMousePosition.y
+                };
+                earth.rotation.y += deltaMove.x * 0.005;
+                earth.rotation.x += deltaMove.y * 0.005;
+                previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }
+        });
 
-            document.addEventListener('touchmove', (e) => {
-                if (isDragging && e.touches.length === 1) {
-                    const deltaMove = {
-                        x: e.touches[0].clientX - previousMousePosition.x,
-                        y: e.touches[0].clientY - previousMousePosition.y
-                    };
-                    earth.rotation.y += deltaMove.x * 0.005;
-                    earth.rotation.x += deltaMove.y * 0.005;
-                    previousMousePosition = { x: e.touches[0].clientX, y: e.touches[0].clientY };
-                }
-            });
-
-            document.addEventListener('touchend', () => {
-                isDragging = false;
-            });
-        })();
-    </script>
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+    })();
+</script>
 </body>
 </html>
