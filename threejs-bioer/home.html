@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A simple Three JS Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body { margin: 0; overflow: hidden; }
+        #container3D { width: 100vw; height: 100vh; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Page</h1>
+    </header>
+    <main>
+        <div id="container3D"></div>
+    </main>
+    <footer>
+        <p>© 2023 Your Name</p>
+    </footer>
+    <script type="module">
+        // Import THREE.js library
+        import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js';
+        import { OrbitControls } from 'https://cdn.skypack.dev/three@0.152.0/examples/jsm/controls/OrbitControls.js';
+        import { GLTFLoader } from 'https://cdn.skypack.dev/three@0.152.0/examples/jsm/loaders/GLTFLoader.js'; 
+
+        // Create a scene
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        let object = null;
+        let controls = null;
+        let objectToRender = 'tiger_3d';
+
+        const loader = new GLTFLoader();
+
+        // Add a fallback cube to the scene to test rendering
+        const geometry = new THREE.BoxGeometry(1, 1, 1);
+        const material = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+        console.log("Fallback cube added to the scene. If you see a green cube, the renderer is working.");
+
+        // Load the 3D model
+        loader.load(
+            `./models/${objectToRender}/scene.gltf`, 
+            function (gltf) {
+                object = gltf.scene;
+                scene.add(object);
+                console.log("Model loaded successfully:", objectToRender);
+                // Remove the fallback cube once the model loads
+                scene.remove(cube);
+            }, 
+            function(xhr) {
+                console.log(`Loading progress: ${(xhr.loaded / xhr.total * 100).toFixed(2)}%`);
+            }, 
+            function (error) {
+                console.error("Error loading GLTF model:", error);
+            }
+        );
+
+        // Initialize renderer
+        const renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio); // Improve rendering quality
+
+        // Add renderer to DOM
+        document.getElementById('container3D').appendChild(renderer.domElement);
+
+        // Set camera position
+        camera.position.z = 25;
+
+        // Add lights
+        const topLight = new THREE.DirectionalLight(0xffffff, 1);
+        topLight.position.set(500, 500, 500);
+        topLight.castShadow = true;
+        scene.add(topLight);
+
+        const ambientLight = new THREE.AmbientLight(0x333333, 5);
+        scene.add(ambientLight);
+
+        // Add OrbitControls
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true; // Smooth camera movement
+        controls.dampingFactor = 0.05;
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            // Rotate the cube (for testing)
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            // Rotate the model if loaded
+            if (object) {
+                // object.rotation.y += 0.01;
+            }
+            controls.update(); // Update controls
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

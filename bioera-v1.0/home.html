@@ -35,11 +35,10 @@
 <body>
     <header>
         <div class="header-content">
-            <img style="width: 70px; height: 45px; padding-right: 10px;" src="assets/images/tlanimi_logo.png" alt="Tlanimi Logo">
             <div class="header-left-section">
                 <div>
-                    <h2 class="header-title">Tlanimi</h2>
-                    <p class="header-subtitle">Unlocking potential</p>
+                    <img style="width: 110px; height: 70px; padding-right: 10px;" src="images/bioera_logo_black.png" alt="BioEra Logo">
+                    <p class="header-subtitle">Play, Learn, Collect</p>
                 </div>
                 <nav class="nav-menu">
                     <a href="home.html">Home</a>
@@ -57,35 +56,61 @@
             </div>
         </div>
     </header>
-    <div id="promo-wrapper-top">
+    <!-- <div id="promo-wrapper-top">
         <div class="bioera-logo-section">
             <img src="images/bioera_logo_black.png" alt="BioEra Logo">
             <h2 class="bioera-keywords-title">Play, Learn, Collect</h2>
             <p class="bioera-keywords-subtitle">A collectible card game to explore and learn about the natural world.</p>
         </div>
-    </div>
-    <div class="section">
-        <p id="purpose-title">Our Purpose</p>
-        <img src="images/kickstart_promo.png" alt="Promo Picture KST">
-        <p style="margin: 1rem auto 2rem auto;">BioEra rewards the curiosity of young minds through an engaging card game </br> that makes learning about nature fun</p>
-        <div id="learn-more">
-            <a href="learn-more.html" class="button">Learn our story</a>
+    </div> -->
+    <section class="section purpose-section">
+        <div class="purpose-image">
+            <img src="images/kickstart_promo.png" alt="Promo Picture KST">
         </div>
-    </div>
+        <div class="purpose-content">
+            <p id="purpose-title">Play BioEra</p>
+            <p class="purpose-subtitle">BioEra rewards the curiosity of young minds through an engaging card game <br> that makes learning about nature fun</p>
+            <!-- <div id="learn-more">
+                <a href="learn-more.html" class="button">Learn our story</a>
+            </div> -->
+        </div>
+    </section>
+
     <div class="section" id="section-two">
-        <p id="purpose-title">Animal Kingdoms</p>
-        <img src="images/simba.png" alt="Section 2 Image 1">
-        <img src="images/cheetah_carnivore.png" alt="Section 2 Image 2">
-        <img src="images/elephant_herb.png" alt="Section 2 Image 1">
-        <img src="images/yacal_omni.png" alt="Section 2 Image 2">
-        <img src="images/elephant_grass_prod.png" alt="Section 2 Image 1">
-        <img src="images/beetle_decomp.png" alt="Section 2 Image 2">
-        <p>Understand how to use your cards and the different trophic levels</br> This will help you build a strategy to win the game </br></p>
-        <div id="learn-more">
-            <a href="learn-more.html" class="button">Explore</a>
-        </div>
+        <p id="purpose-title" style="text-align: center; padding: 2rem;">Build an ecosystem and win!</p>
+        <section class="section purpose-section" style="padding: 0;">
+            <div class="purpose-content">
+                <h3>Know your cards</h3>
+                <img src="images/simba.png" alt="Section 2 Image 1">
+                <p>There are two kinds of cards: Lifeforms and Phenomena.</p>
+                <div id="learn-more">
+                    <a href="learn-more.html" class="button">Learn More</a>
+                </div>
+            </div>
+        </section>
+        <section class="section purpose-section" style="padding: 0;">
+            <div class="purpose-content">
+                <h3>Ecosystem Rules</h3>
+                <img src="images/simba.png" alt="Section 2 Image 1">
+                <p>Build your wildlife and create a long lasting ecosystem.</br></p>
+                <div id="learn-more">
+                    <a href="learn-more.html" class="button" style="background: #FEA236;">Explore</a>
+                </div>
+            </div>
+        </section>
     </div>
-    <div class="section" id="section-continent">
+    <!-- Third section -->
+    <section class="section purpose-section" style="background-color: unset;">
+        <div class="purpose-content">
+            <p id="purpose-title">Pick your continent</p>
+            <p id="globe-container"></p>
+            <p class="purpose-subtitle">BioEra rewards the curiosity of young minds through an engaging card game <br> that makes learning about nature fun</p>
+            <!-- <div id="learn-more">
+                <a href="learn-more.html" class="button">Learn our story</a>
+            </div> -->
+        </div>
+    </section>
+    <!-- <div class="section" id="section-continent">
         <p id="purpose-title">Choose your continent</p>
         <div id="globe-container"></div>
         <p style="margin-bottom: 4rem;">Select the continent that you want to know more about</p>
@@ -107,10 +132,18 @@
                 </div>
             </form>
         </section>
+    </div> -->
+    <div id="promo-wrapper">
+        <section id="promo" style="align-items: start;">
+            <p id="purpose-title" style="color: rgb(255, 255, 255);">BioEra is almost here</p>
+            <p>Subscribe and get ready to explore nature like never before</p>
+            </div>
+        </section>
     </div>
-    <div id="footer-wrapper">
-        <div id="footer">
-            <div class="footer-row">
+    <div id="promo-wrapper">
+        <section id="promo" style="align-items: start;">
+            <p id="purpose-title" style="color: rgb(255, 255, 255);">BioEra is coming very soon</p>
+            <p>Subscribe or preorder your cards and get ready to explore nature like never before</p>
                 <div class="social-media">
                     <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" style="padding-right: 10px;"></i>Twitter</a>
                     <a href="https://www.facebook.com/profile.php?id=61564506149516" target="_blank"><i class="fab fa-facebook-f" style="padding-right: 10px;"></i>Facebook</a>
@@ -118,6 +151,20 @@
                     <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube" style="padding-right: 10px;"></i>YouTube</a>
                 </div>
             </div>
+        </section>
+    </div>
+    <div id="footer-wrapper">
+        <!-- <div id="footer">
+            <p id="purpose-title">Stay in touch!</p>
+            <p>Follow us in social media or contact us. </br>We want to hear about your experience with BioEra</p>
+            <div class="footer-row">
+                <div class="social-media">
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter" style="padding-right: 10px;"></i>Twitter</a>
+                    <a href="https://www.facebook.com/profile.php?id=61564506149516" target="_blank"><i class="fab fa-facebook-f" style="padding-right: 10px;"></i>Facebook</a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" style="padding-right: 10px;"></i>Instagram</a>
+                    <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube" style="padding-right: 10px;"></i>YouTube</a>
+                </div>
+            </div> -->
             <div id="copyright">
                 <p>© 2025 Tlanimi. All rights reserved. | Santa Clara, CA 95050, USA</p>
             </div>

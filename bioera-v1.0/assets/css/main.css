@@ -9,38 +9,14 @@
 	background: transparent; /* Ensure container background is transparent */
 	text-align: center;
 }
-.dialog {
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background: white;
-	padding: 20px;
-	border-radius: 8px;
-	box-shadow: 0 0 10px rgba(0,0,0,0.5);
-	z-index: 1000;
-	display: none;
-	min-width: 200px;
-	text-align: center;
-}
-.dialog button {
-	margin-top: 10px;
-	padding: 5px 10px;
-	cursor: pointer;
-	background: #007bff;
-	color: white;
-	border: none;
-	border-radius: 4px;
-}
-.dialog button:hover {
-	background: #0056b3;
-}
 
 /* Your existing styles (unchanged) */
 header {
 	position: relative;
-	background-image: url("assets/css/images/overlay.png"), linear-gradient(75deg, #40925a 15%, #2bab53 55%);
-	background-color: #3c8b12;
+	/* background-image: url("assets/css/images/overlay.png"), linear-gradient(75deg, #40925a 15%, #2bab53 55%);
+	background-color: rgba(242, 242, 232, 0.562); */
+	background-color: rgb(242, 242, 232);
+
 	background-size: 128px 128px, 100% 100%, auto;
 	background-repeat: repeat, no-repeat, no-repeat;
 	padding: 10px 20px;
@@ -61,25 +37,26 @@ header {
 	flex: 1;
 }
 .header-title {
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: 700;
 	margin-bottom: 5px;
 	color: rgb(255, 255, 255);
 }
 .header-subtitle {
-	font-size: 10px;
+	font-size: 12px;
+	font-weight: 600;
 	margin-top: 2px;
-	color: rgba(255, 255, 255, 0.824);
+	color: #544c3f;
 }
 body {
 	font-family: 'Lexend', Arial, sans-serif;
 	font-weight: 400;
-	font-size: 22px;
+	font-size: 19px;
 	margin: 0;
 	padding: 0;
 	color: #544c3f;
-	background-image: linear-gradient(100deg, #eedbb3 10%, #f4eabc 40%, #eedbb3 50%);
-	background-color: #eae494;
+	/* background-image: linear-gradient(100deg, #eedbb3 10%, #f4eabc 40%, #eedbb3 50%);
+	background-color: #eae494; */
 	background-repeat: repeat, no-repeat, no-repeat;
 }
 .nav-menu {
@@ -89,7 +66,7 @@ body {
 	margin: 0 auto;
 }
 .nav-menu a {
-	color: rgb(242, 242, 232);
+	color: #544c3f;
 	text-decoration: none;
 	font-size: 1.2rem;
 	font-weight: 600;
@@ -98,13 +75,13 @@ body {
 	padding-right: 2rem;
 }
 .nav-menu a:hover {
-	transform: scale(1.1);
+	color: #d3db7f;
 }
 .shopping-cart {
 	flex: 0 0 auto;
 }
 .shopping-cart a {
-	color: #ffffff;
+	color: #ffffff00;
 	text-decoration: none;
 	font-size: 24px;
 	padding: 8px;
@@ -143,22 +120,104 @@ body {
 .bioera-logo-section img {
 	height: 18rem;
 }
-.section {
-	text-align: center;
-	background-color: rgb(242, 242, 232);
-	padding-bottom: 4rem; 
-	padding-top: 5rem
+/* Specific styles for the Our Purpose section */
+.purpose-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(248, 248, 245);
+    padding: 2rem 2rem 5rem 2rem;
+    gap: 2rem;
+}
+
+/* Style for the image */
+.purpose-image {
+    flex: 0 0 auto;
+}
+
+.purpose-image img {
+    max-width: 400px;
+    height: auto;
+}
+
+/* Style for the content (title, subtitle, button) */
+.purpose-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+    max-width: 500px;
+}
+
+/* Ensure existing #purpose-title styles are respected */
+#purpose-title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 50px;
+    color: #554c3d;
+    margin: 0;
+}
+
+/* Style for the subtitle */
+.purpose-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #544c3f;
+    margin: 0;
+    line-height: 2rem;
+	padding-top: 2rem;
+}
+
+/* Ensure button styling is consistent */
+#learn-more .button {
+    background: #6DB491;
+    color: #fff;
+    font-size: 0.75em;
+    font-weight: 600;
+    padding: 12px 40px;
+    border-radius: 50px;
+    border: 1px solid #00000006;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .purpose-section {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .purpose-image img {
+        max-width: 100%;
+    }
+
+    .purpose-content {
+        padding: 0 1rem;
+    }
+
+    #purpose-title {
+        font-size: 2rem;
+    }
+
+    .purpose-subtitle {
+        font-size: 1rem;
+    }
 }
 .section img {
-	height: 21rem;
+	height: 19rem;
 	margin: 1.1rem auto auto auto;
 }
 .section p{
-	margin: 2rem 6rem 2.5rem 6rem;
+	/* margin: 2rem 6rem 2.5rem 6rem; */
 }
 #purpose-title {
 	font-family: Paytone One; 
-	margin: 5rem auto auto auto;
+	margin: 0rem auto 0rem auto; 
 	font-size: 45px;
 	color: #554c3d;
 }
@@ -183,15 +242,15 @@ body {
 	justify-content: center;
 	align-items: center;
 	gap: 15px;
-	background-color: #DFD7BF;
+	/* background-color: #DFD7BF; */
 	color: #544c3f;
+	padding: 2rem 2rem 5rem 2rem;
 }
 #section-two img {
 	flex: 0 0 auto;
 	height: 12.5rem;
 	padding: 0%;
-	margin: 2rem 0 2rem 0;
-	
+	/* margin: 2rem 0 2rem 0; */
 }
 #section-two p {
 	width: 100%;
@@ -207,13 +266,13 @@ body {
 }
 #promo-wrapper {
 	position: relative;
-	background-image: linear-gradient(5deg, #207c51 10%, #3cb784f9 40%, #43a175 50%);
+	background-image: linear-gradient(5deg, #4d4d4cde 10%, #8b795bf9 40%, #5a5a5af9 50%);
 	background-size:cover;
 	background-position: top left, center center;
 	color: #fff;
-	text-align: center;
+	text-align: start;
 	background-color: #5F939A;
-	padding: 5.5rem 0 5.5em 0;
+	padding: 5.5rem 0 5.5em 5.5rem;
 }
 #promo-wrapper-top {
 	position: relative;
@@ -225,16 +284,18 @@ body {
 	font-size: 22px;
 }
 #learn-more .button {
-	margin: 0;
-	background: #17b04a;
+	margin: 0 0 2rem;
+	background: #6DB491;
 	color: #fff;
 	font-size: 0.75em;
 	font-weight: 600;
 	padding: 12px 40px;
 	border-radius: 50px;
+	border: 1px solid #00000006;
 	text-decoration: none;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #submit .button {
@@ -245,6 +306,7 @@ body {
 	font-weight: 600;
 	padding: 15px 50px;
 	border-radius: 50px;
+	border: 1px solid #00000006;
 	text-decoration: none;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
@@ -258,33 +320,32 @@ body {
 	font-weight: 600;
 	padding: 15px 50px;
 	border-radius: 50px;
+	border: 1px solid #00000006;
 	text-decoration: none;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 #promo .button {
-	background: #f7cd32;
+	background: #ffde64;
 	color: #606060;
 	font-size: 0.8em;
 	padding: 15px 30px;
 	border-radius: 50px;
 	text-decoration: none;
-	border-width: 0;
-	font-family: 'Lexend', Arial, sans-serif;
 	display: inline-block;
 	transition: background-color 0.3s ease, transform 0.2s ease;
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 #promo .button:hover {
-	background: #f7cd32;
+	background: #288a20;
 	transform: scale(1.05);
 }
 #footer-wrapper {
 	background-color: #2C3639;
 	background-size: 128px 128px, auto;
 	background-repeat: repeat, no-repeat;
-	padding: 2em 0 0em 0;
+	padding: 1em 0 1em 0;
 	color: #ffffff;
 	text-align: center;
 }
@@ -394,14 +455,13 @@ body {
 	transition: color 0.3s ease;
 }
 .social-media a:hover {
-	color: #ffffff;
+	color: #3b8c95;
 }
 .social-media .icon {
 	margin-right: 10px;
 	font-size: 1.5rem;
 }
 #copyright {
-	padding: 2rem 0;
 	font-size: 0.9rem;
 }
 #copyright p {
@@ -409,12 +469,10 @@ body {
 }
 @media (max-width: 768px) {
 	.header-content {
-		flex-direction: row;
+		flex-direction: column;
 		align-items: flex-start;
 	}
 	.header-left-section {
-		flex-direction: column;
-		align-items: flex-start;
 		width: 100%;
 	}
 	.nav-menu {

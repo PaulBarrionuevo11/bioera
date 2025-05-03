@@ -1,0 +1,8 @@
+Model Information:
+* title:	Tiger
+* source:	https://sketchfab.com/3d-models/tiger-2472faceb5f74008a2ac1322202ec585
+* author:	Trident.AI (https://sketchfab.com/Trident.AI)
+
+Model License:
+* license type:	SKETCHFAB Standard (https://sketchfab.com/licenses)
+* requirements:	Under basic restrictions, use worldwide, on all types of media, commercially or not, and in all types of derivative works

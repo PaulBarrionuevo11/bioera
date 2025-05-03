@@ -1,0 +1,26 @@
+body{
+    background-color: #000;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+}
+
+header{
+    color: #fff;
+    margin-top: 3em;
+    text-align: center;
+}
+
+header h1{
+    font-size: 2em;
+    font-weight: 900;
+    margin-bottom: 0.5em;
+}
+
+#container3D canvas{
+    display: flex;
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
