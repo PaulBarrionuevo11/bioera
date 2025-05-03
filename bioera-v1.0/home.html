@@ -81,8 +81,8 @@
         <section class="section purpose-section" style="padding: 0;">
             <div class="purpose-content">
                 <h3>Know your cards</h3>
-                <img src="images/simba.png" alt="Section 2 Image 1">
-                <p>There are two kinds of cards: Lifeforms and Phenomena.</p>
+                <img src="images/cheetah_carnivore.png" alt="Section 2 Image 1">
+                <p style="padding: 1rem;">There are two kinds of cards: Lifeforms and Phenomena.</p>
                 <div id="learn-more">
                     <a href="learn-more.html" class="button">Learn More</a>
                 </div>
@@ -91,8 +91,8 @@
         <section class="section purpose-section" style="padding: 0;">
             <div class="purpose-content">
                 <h3>Ecosystem Rules</h3>
-                <img src="images/simba.png" alt="Section 2 Image 1">
-                <p>Build your wildlife and create a long lasting ecosystem.</br></p>
+                <img src="images/ecosystem.png" alt="Section 2 Image 1">
+                <p style="padding: 1rem;">Build your wildlife and create a long lasting ecosystem.</br></p>
                 <div id="learn-more">
                     <a href="learn-more.html" class="button" style="background: #FEA236;">Explore</a>
                 </div>
@@ -102,12 +102,20 @@
     <!-- Third section -->
     <section class="section purpose-section" style="background-color: unset;">
         <div class="purpose-content">
-            <p id="purpose-title">Pick your continent</p>
-            <p id="globe-container"></p>
+            <p id="purpose-title" style="margin:0rem auto 3rem auto;">One deck, one continent</p>
+            <div id="continent-section">
+                <div id="globe-container"></div>
+                <div id="continent-buttons">
+                    <button class="continent-btn" data-continent="Africa">Africa</button>
+                    <button class="continent-btn" data-continent="Antarctica">Antarctica</button>
+                    <button class="continent-btn" data-continent="Asia">Asia</button>
+                    <button class="continent-btn" data-continent="Australia">Australia</button>
+                    <button class="continent-btn" data-continent="Europe">Europe</button>
+                    <button class="continent-btn" data-continent="North America">North America</button>
+                    <button class="continent-btn" data-continent="South America">South America</button>
+                </div>
+            </div>
             <p class="purpose-subtitle">BioEra rewards the curiosity of young minds through an engaging card game <br> that makes learning about nature fun</p>
-            <!-- <div id="learn-more">
-                <a href="learn-more.html" class="button">Learn our story</a>
-            </div> -->
         </div>
     </section>
     <!-- <div class="section" id="section-continent">
@@ -140,7 +148,7 @@
             </div>
         </section>
     </div>
-    <div id="promo-wrapper">
+    <!-- <div id="promo-wrapper">
         <section id="promo" style="align-items: start;">
             <p id="purpose-title" style="color: rgb(255, 255, 255);">BioEra is coming very soon</p>
             <p>Subscribe or preorder your cards and get ready to explore nature like never before</p>
@@ -152,7 +160,19 @@
                 </div>
             </div>
         </section>
-    </div>
+    </div> -->
+    <section class="section purpose-section">
+        <div class="purpose-content">
+            <p id="purpose-title">Our Mission</p>
+            <p class="purpose-subtitle">Pending <br> Pending</p>
+            <!-- <div id="learn-more">
+                <a href="learn-more.html" class="button">Learn our story</a>
+            </div> -->
+        </div>
+        <div class="purpose-image">
+            <img src="images/kickstarter-kids.png" alt="Promo Picture KST">
+        </div>
+    </section>
     <div id="footer-wrapper">
         <!-- <div id="footer">
             <p id="purpose-title">Stay in touch!</p>
@@ -344,6 +364,56 @@
                 isDragging = false;
             });
         })();
+        // Continent center coordinates (approximate longitude for rotation)
+    const continentCoordinates = {
+        'Africa': { lon: 20, lat: 0 },
+        'Antarctica': { lon: 0, lat: -90 },
+        'Asia': { lon: 100, lat: 30 },
+        'Australia': { lon: 135, lat: -25 },
+        'Europe': { lon: 10, lat: 50 },
+        'North America': { lon: -100, lat: 40 },
+        'South America': { lon: -60, lat: -15 }
+    };
+
+    // Function to rotate globe to a specific continent
+    function focusContinent(lon, lat) {
+        const phi = (90 - lat) * Math.PI / 180;
+        const theta = (lon + 180) * Math.PI / 180;
+        const targetRotationY = -theta + Math.PI; // Adjust for Three.js coordinate system
+        const targetRotationX = phi - Math.PI / 2;
+
+        // Smooth rotation animation
+        const animateRotation = () => {
+            const speed = 0.05; // Animation speed
+            earth.rotation.y += (targetRotationY - earth.rotation.y) * speed;
+            earth.rotation.x += (targetRotationX - earth.rotation.x) * speed;
+
+            // Stop when close to target
+            if (Math.abs(earth.rotation.y - targetRotationY) < 0.01 &&
+                Math.abs(earth.rotation.x - targetRotationX) < 0.01) {
+                earth.rotation.y = targetRotationY;
+                earth.rotation.x = targetRotationX;
+            } else {
+                requestAnimationFrame(animateRotation);
+            }
+        };
+        animateRotation();
+    }
+
+    // Add click event listeners to continent buttons
+    document.querySelectorAll('.continent-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const continent = button.dataset.continent;
+            const { lon, lat } = continentCoordinates[continent];
+            focusContinent(lon, lat);
+
+            // Optionally update dialog for the continent
+            const dialog = document.getElementById('continent-dialog');
+            document.getElementById('dialog-title').textContent = continent;
+            document.getElementById('dialog-content').textContent = `Explore the biodiversity of ${continent}!`;
+            dialog.style.display = 'block';
+        });
+    });
     </script>
 </body>
 </html>
