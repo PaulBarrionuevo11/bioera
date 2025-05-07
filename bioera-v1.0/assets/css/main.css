@@ -287,7 +287,7 @@ body {
 }
 #section-two img {
 	flex: 0 0 auto;
-	height: 12.5rem;
+	height: 13.2rem;
 	padding: 0%;
 	/* margin: 2rem 0 2rem 0; */
 }
@@ -366,20 +366,21 @@ body {
 	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 #promo .button {
-	background: #ffde64;
-	color: #606060;
+	background: #1b7b4d;
+	color: #fff;
 	font-size: 0.8em;
-	padding: 15px 30px;
+	padding: 12px 30px;
 	border-radius: 50px;
 	text-decoration: none;
-	display: inline-block;
-	transition: background-color 0.3s ease, transform 0.2s ease;
-	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	border: 1px solid #0000006d;
+	/* display: inline-block; */
+	/* transition: background-color 0.3s ease, transform 0.2s ease; */
+	/* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
-#promo .button:hover {
+/* #promo .button:hover {
 	background: #288a20;
 	transform: scale(1.05);
-}
+} */
 #footer-wrapper {
 	background-size: 128px 128px, auto;
 	background-repeat: repeat, no-repeat;
@@ -478,15 +479,16 @@ body {
 	justify-content: center;
 }
 .social-media {
+	padding-top: 2.5rem;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	gap: 20px;
+	gap: 10px;
 }
 .social-media a {
-	color: #ffffff;
+	color: #ffffff88;
 	text-decoration: none;
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	display: flex;
 	align-items: center;
 	transition: color 0.3s ease;
@@ -495,7 +497,7 @@ body {
 	color: #3b8c95;
 }
 .social-media .icon {
-	margin-right: 10px;
+	margin-right: 5px;
 	font-size: 1.5rem;
 }
 #copyright {
@@ -528,4 +530,48 @@ body {
 	.footer-col {
 		min-width: 100%;
 	}
+
+	#signup-form {
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: -ms-flex;
+		display: flex;
+		position: relative; }
+		#signup-form input[type="text"],
+		#signup-form input[type="password"],
+		#signup-form input[type="email"] {
+		  width: 18em; }
+		#signup-form > * {
+		  margin: 0 0 0 1em; }
+		#signup-form > :first-child {
+		  margin: 0 0 0 0; }
+		@media screen and (max-width: 480px) {
+		  #signup-form {
+			-moz-flex-direction: column;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column; }
+			#signup-form input[type="type"],
+			#signup-form input[type="password"],
+			#signup-form input[type="email"] {
+			  width: 100%; }
+			#signup-form > * {
+			  margin: 1.25em 0 0 0; }
+			#signup-form .message {
+			  bottom: -1.5em;
+			  font-size: 0.9em;
+			  height: 1em;
+			  left: 0;
+			  line-height: inherit;
+			  margin-top: 0;
+			  position: absolute; } 
+			  }
+			  .dot {
+				height: 25px;
+				width: 25px;
+				background-color: #bbb;
+				border-radius: 50%;
+				display: inline-block;
+			  }
+			  
 }

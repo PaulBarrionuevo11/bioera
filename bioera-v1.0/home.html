@@ -42,7 +42,7 @@
                 </div>
                 <nav class="nav-menu">
                     <a href="home.html">Home</a>
-                    <a href="#">Events</a>
+                    <a href="submit_firebase.html">Events</a>
                     <a href="#">Store</a>
                     <a href="learn-more.html">About</a>
                 </nav>
@@ -69,7 +69,7 @@
         </div>
         <div class="purpose-content">
             <p id="purpose-title">Play BioEra</p>
-            <p class="purpose-subtitle">BioEra rewards the curiosity of young minds through an engaging card game <br> that makes learning about nature fun</p>
+            <p class="purpose-subtitle">BioEra rewards the curiosity of young minds through an engaging card game <br> that makes learning about nature fun.</p>
             <!-- <div id="learn-more">
                 <a href="learn-more.html" class="button">Learn our story</a>
             </div> -->
@@ -81,10 +81,10 @@
         <section class="section purpose-section" style="padding: 0;">
             <div class="purpose-content">
                 <h3>Know your cards</h3>
-                <img src="images/cheetah_carnivore.png" alt="Section 2 Image 1">
+                <img src="images/know_your_cards(1).png" alt="Section 2 Image 1">
                 <p style="padding: 1rem;">There are two kinds of cards: Lifeforms and Phenomena.</p>
                 <div id="learn-more">
-                    <a href="learn-more.html" class="button">Learn More</a>
+                    <a href="know_your_cards.html" class="button">Learn More</a>
                 </div>
             </div>
         </section>
@@ -102,7 +102,8 @@
     <!-- Third section -->
     <section class="section purpose-section" style="background-color: unset;">
         <div class="purpose-content">
-            <p id="purpose-title" style="margin:0rem auto 3rem auto;">One deck, one continent</p>
+            <p id="purpose-title" style="margin:0rem auto 0rem auto;">One deck, one continent</p>
+            <p class="purpose-subtitle" style="padding: 0 0 2rem 0;">Pick a deck from one of the seven continents to play your opponent.</p>
             <div id="continent-section">
                 <div id="globe-container"></div>
                 <div id="continent-buttons">
@@ -115,7 +116,6 @@
                     <button class="continent-btn" data-continent="South America">South America</button>
                 </div>
             </div>
-            <p class="purpose-subtitle">BioEra rewards the curiosity of young minds through an engaging card game <br> that makes learning about nature fun</p>
         </div>
     </section>
     <!-- <div class="section" id="section-continent">
@@ -144,9 +144,20 @@
     <div id="promo-wrapper">
         <section id="promo" style="align-items: start;">
             <p id="purpose-title" style="color: rgb(255, 255, 255);">BioEra is almost here</p>
-            <p>Subscribe and get ready to explore nature like never before</p>
-            </div>
+            <p style="color: rgba(255, 255, 255, 0.785);">Reserve Your BioEra™ Spot: Unlock Launch Perks & Preorder Exclusives!</p>
+            <form action="" style="margin-top: 2rem; display: flex; align-items: center; gap: 1rem; justify-content: left;">
+                <input id="email" name="email" placeholder="Your Email" type="text" required style="width: 50%; padding: 0.5rem; border-radius: 5px; border: 1px solid #cccccc00; font-family: 'Lexend', sans-serif;" />
+                <input type="submit" id="subscribe-btn" value="Subscribe" class="button" style="padding: 0.5rem 2rem; border-radius: 5px; cursor: pointer; font-weight: 600; border: 1px solid #cccccc00; font-family: 'Lexend', sans-serif;" />
+                <div id="success-message" style="height: 0; min-height: 0; overflow: hidden; font-family: 'Lexend', sans-serif; font-size: 1rem; text-align: center; transition: height 0.3s ease, min-height 0.3s ease;"></div>
+            </form>
         </section>
+        <div class="social-media">
+            <a href="https://www.facebook.com/profile.php?id=61564506149516" target="_blank"><i class="fab fa-facebook-f" style="padding-right: 10px;"></i></a>
+            <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram" style="padding-right: 10px;"></i></a>
+            <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube" style="padding-right: 10px;"></i></a>
+        </div>
+        <p style="font-size: 0.8rem; padding-top: 0.8rem; color: rgba(255, 255, 255, 0.637);">By clicking the subscribe you accept out Terms and Condicions and Policy Privacy</p>
+
     </div>
     <!-- <div id="promo-wrapper">
         <section id="promo" style="align-items: start;">
@@ -163,15 +174,16 @@
     </div> -->
     <section class="section purpose-section">
         <div class="purpose-content">
-            <p id="purpose-title">Our Mission</p>
-            <p class="purpose-subtitle">Pending <br> Pending</p>
+            <p id="purpose-title" style="padding-top: 2rem;">Our Mission</p>
+            <p class="purpose-subtitle">BioEra’s mission is to spark curiosity and foster a deeper connection with nature </br>through an exciting, educational card game that immerses kids, friends and families </br>in the wonders of global ecosystems and their history.</p>
+            <img src="images/kickstarter-kids.png" alt="Promo Picture KST">
             <!-- <div id="learn-more">
                 <a href="learn-more.html" class="button">Learn our story</a>
             </div> -->
         </div>
-        <div class="purpose-image">
+        <!-- <div class="purpose-image">
             <img src="images/kickstarter-kids.png" alt="Promo Picture KST">
-        </div>
+        </div> -->
     </section>
     <div id="footer-wrapper">
         <!-- <div id="footer">
