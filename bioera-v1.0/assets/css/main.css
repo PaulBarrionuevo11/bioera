@@ -1,14 +1,119 @@
 @import url("https://fonts.googleapis.com/css?family=Lexend:300,400,600");
 @import url("https://fonts.googleapis.com/css2?family=Paytone+One");
 
-/* Style for the globe container */
-/* #globe-container {
-	width: 100%;
-	height: 385px;
-	margin-left: 9rem;
-	background: transparent; /* Ensure container background is transparent 
-	text-align: center;
-} */
+/***** HEADER STYLES *****/
+/* BIOERA Logo Header */
+#bioera-logo {
+	width: 110px; 
+	height: 70px; 
+	padding-right: 10px;
+}
+/* Navigation menu */
+.nav-menu {
+	display: flex;
+	gap: 20px;
+	flex: 0 0 auto;
+	margin: 0 auto;
+}
+.nav-menu a {
+	color: #544c3f;
+	text-decoration: none;
+	font-size: 1.2rem;
+	font-weight: 600;
+	transition: color 0.3s ease;
+	font-family: 'Lexend', Arial, sans-serif;
+	padding-right: 2rem;
+}
+.nav-menu a:hover {
+	color: #d3db7f;
+}
+/* Shopping cart PENDING*/
+.shopping-cart {
+	flex: 0 0 auto;
+}
+.shopping-cart a {
+	color: #ffffff00;
+	text-decoration: none;
+	font-size: 24px;
+	padding: 8px;
+	border-radius: 50%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+.shopping-cart a:hover {
+	transform: scale(1.1);
+}
+#cart {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	width: 250px;
+	background: #fff;
+	border-radius: 5px;
+	padding: 10px;
+	display: none;
+	z-index: 10;
+}
+#cart h3 {
+	margin: 0 0 10px;
+	color: #39b230;
+}
+#cart p {
+	margin: 0;
+	color: #8a7b62;
+}
+
+/****** SECTION 1 *******/
+/* Specific styles for Play BioEra section */
+.purpose-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgb(248, 248, 245);
+    padding: 2rem 2rem 5rem 2rem;
+    gap: 2rem;
+}
+/* Style for the image */
+.purpose-image {
+    flex: 0 0 auto;
+}
+
+.purpose-image img {
+    max-width: 400px;
+    height: auto;
+}
+
+/* Style for the content (title, subtitle, button) */
+.purpose-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 auto;
+}
+
+/* Ensure existing #purpose-title styles are respected */
+#purpose-title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 50px;
+    color: #554c3d;
+    margin: 0;
+}
+
+/* Style for the subtitle */
+.purpose-subtitle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #544c3f;
+    margin: 0;
+    line-height: 2rem;
+	padding-top: 2rem;
+}
+
+/**********  ***********/
 
 #continent-section {
     display: flex;
@@ -98,114 +203,6 @@ body {
 	/* background-image: linear-gradient(100deg, #eedbb3 10%, #f4eabc 40%, #eedbb3 50%);
 	background-color: #eae494; */
 	background-repeat: repeat, no-repeat, no-repeat;
-}
-.nav-menu {
-	display: flex;
-	gap: 20px;
-	flex: 0 0 auto;
-	margin: 0 auto;
-}
-.nav-menu a {
-	color: #544c3f;
-	text-decoration: none;
-	font-size: 1.2rem;
-	font-weight: 600;
-	transition: color 0.3s ease;
-	font-family: 'Lexend', Arial, sans-serif;
-	padding-right: 2rem;
-}
-.nav-menu a:hover {
-	color: #d3db7f;
-}
-.shopping-cart {
-	flex: 0 0 auto;
-}
-.shopping-cart a {
-	color: #ffffff00;
-	text-decoration: none;
-	font-size: 24px;
-	padding: 8px;
-	border-radius: 50%;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-}
-.shopping-cart a:hover {
-	transform: scale(1.1);
-}
-#cart {
-	position: absolute;
-	top: 100%;
-	right: 0;
-	width: 250px;
-	background: #fff;
-	border-radius: 5px;
-	padding: 10px;
-	display: none;
-	z-index: 10;
-}
-#cart h3 {
-	margin: 0 0 10px;
-	color: #39b230;
-}
-#cart p {
-	margin: 0;
-	color: #8a7b62;
-}
-.bioera-logo-section {
-	text-align: center;
-	padding: 50px;
-}
-.bioera-logo-section img {
-	height: 18rem;
-}
-/* Specific styles for the Our Purpose section */
-.purpose-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: rgb(248, 248, 245);
-    padding: 2rem 2rem 5rem 2rem;
-    gap: 2rem;
-}
-
-/* Style for the image */
-.purpose-image {
-    flex: 0 0 auto;
-}
-
-.purpose-image img {
-    max-width: 400px;
-    height: auto;
-}
-
-/* Style for the content (title, subtitle, button) */
-.purpose-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 0 0 auto;
-}
-
-/* Ensure existing #purpose-title styles are respected */
-#purpose-title {
-    font-family: 'Paytone One', sans-serif;
-    font-size: 50px;
-    color: #554c3d;
-    margin: 0;
-}
-
-/* Style for the subtitle */
-.purpose-subtitle {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: #544c3f;
-    margin: 0;
-    line-height: 2rem;
-	padding-top: 2rem;
 }
 
 /* Ensure button styling is consistent */
